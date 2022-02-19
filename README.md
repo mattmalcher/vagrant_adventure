@@ -61,13 +61,12 @@ I looked at these docs:
 https://docs.ansible.com/ansible/latest/user_guide/intro_getting_started.html
 https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html
 https://www.vagrantup.com/docs/provisioning/ansible_intro
+https://www.innuy.com/blog/installation-of-docker-swarm-using-ansible/
 
 I also found this example of a playbook for setting up compose
 https://gist.github.com/yonglai/d4617d6914d5f4eb22e4e5a15c0e9a03
 
 I figured I should probably try running the commands over ssh first so I know what I'm doing
-https://www.sysnet-admin.com/2021/03/setup-docker-swarm-on-rhel-8-x/
-https://www.server-world.info/en/note?os=CentOS_8&p=docker&f=1
 https://techviewleo.com/setup-docker-swarm-cluster-on-rocky-linux/
 
 ```bash

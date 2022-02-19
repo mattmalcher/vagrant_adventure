@@ -9,13 +9,34 @@ Vagrant.configure("2") do |config|
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
+  
+  config.vm.define "rocky_1" do |rocky_1|
+  	rocky_1.vm.box = "rockylinux/8"
+  	rocky_1.vm.box_version = "4.0.0"
+  	
+  	rocky_1.vm.provider "virtualbox" do |vb|
+		vb.memory = "1024"
+	end
+		
+	rocky_1.vm.provision "ansible" do |ansible|    
+		ansible.playbook = "provisioning/playbook.yml"  
+	end
+  	
+  end
+  
+  config.vm.define "rocky_2" do |rocky_2|
+  	rocky_2.vm.box = "rockylinux/8"
+  	rocky_2.vm.box_version = "4.0.0"
+  	
+  	rocky_2.vm.provider "virtualbox" do |vb|
+		vb.memory = "1024"
+  	end
+  end
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   # config.vm.box = "hashicorp/bionic64"
-  config.vm.box = "rockylinux/8"
-  config.vm.box_version = "4.0.0"
-  
+   
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
@@ -51,12 +72,7 @@ Vagrant.configure("2") do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  config.vm.provider "virtualbox" do |vb|
-    # Display the VirtualBox GUI when booting the machine
-    # vb.gui = true
-      # Customize the amount of memory on the VM:
-    vb.memory = "1024"
-  end
+
   
   # View the documentation for the provider you are using for more
   # information on available options.
