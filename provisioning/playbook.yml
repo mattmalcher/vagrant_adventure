@@ -25,7 +25,9 @@
     yum_repository:
       name: docker_ce
       description: Docker CE Repo
-      baseurl: https://download.docker.com/linux/centos/docker-ce.repo
+      baseurl: https://download.docker.com/linux/centos/$releasever/$basearch/stable
+      gpgcheck: yes
+      gpgkey: https://download.docker.com/linux/centos/gpg
 
   - name: Install Docker
     dnf:
