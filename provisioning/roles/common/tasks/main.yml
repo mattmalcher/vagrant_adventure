@@ -1,0 +1,16 @@
+- name: Install Python
+  dnf:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+  - python39
+ 
+# installing requests & docker allows the community.general.docker_swarm plugin to work 
+- name: Install Python Packages
+  pip:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+  - requests
+  - docker
+ 

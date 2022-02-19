@@ -1,0 +1,13 @@
+---
+# playbook to set up docker swarm on rockylinux machines
+
+#- gather_facts: false
+- hosts: all
+  become: yes
+  
+  roles:
+    - common
+    - docker_worker
+    - swarm_manager
+
+  

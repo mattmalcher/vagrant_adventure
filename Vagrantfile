@@ -17,11 +17,11 @@ Vagrant.configure("2") do |config|
   	rocky_1.vm.provider "virtualbox" do |vb|
 		vb.memory = "1024"
 	end
-		
+			
 	rocky_1.vm.provision "ansible" do |ansible|    
-		ansible.playbook = "provisioning/playbook.yml"  
+		ansible.playbook = "provisioning/playbook_manager.yml"  
 	end
-  	
+	  	
   end
   
   config.vm.define "rocky_2" do |rocky_2|
@@ -31,6 +31,10 @@ Vagrant.configure("2") do |config|
   	rocky_2.vm.provider "virtualbox" do |vb|
 		vb.memory = "1024"
   	end
+  	
+  	rocky_2.vm.provision "ansible" do |ansible|    
+		ansible.playbook = "provisioning/playbook_worker.yml"  
+	end
   end
 
   # Every Vagrant development environment requires a box. You can search for

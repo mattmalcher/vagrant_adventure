@@ -1,0 +1,9 @@
+# tasks to become a swarm manager
+- name: Init a new swarm with default parameters
+  community.general.docker_swarm:
+    state: present
+  register: swarm_data
+    
+- name: print return vals for debug
+  debug:
+    msg: "{{ swarm_data }}"

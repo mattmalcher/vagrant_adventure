@@ -1,0 +1,5 @@
+- name: Join Swarm
+  docker_swarm:
+    state: join
+    join_token: "{{ swarm_data.swarm_facts.JoinTokens.Worker }}"
+
