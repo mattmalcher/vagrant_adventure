@@ -3,7 +3,33 @@
   community.general.docker_swarm:
     state: present
   register: swarm_data
-    
+  
 - name: print return vals for debug
   debug:
     msg: "{{ swarm_data }}"
+      
+- name: Set manager_ip
+  set_fact:
+    swarm_manager_ip: "{{ ansible_default_ipv4.address }}'"
+      
+- name: print return vals for debug
+  debug:
+    msg: "{{ swarm_data }}"    
+
+    
+#- name: Get master join command
+#  shell: docker swarm join-token manager
+#  register: master_join_command_raw
+
+#- name: Set master join command
+#  set_fact:
+#    master_join_command: "{{ master_join_command_raw.stdout_lines[2] }}"
+  
+  
+#- name: Get worker join command
+#  shell: docker swarm join-token worker
+#  register: worker_join_command_raw
+
+#- name: Set worker join command
+#  set_fact:
+#    worker_join_command: "{{ worker_join_command_raw.stdout_lines[2] }}"

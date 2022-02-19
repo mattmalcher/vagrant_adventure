@@ -69,6 +69,11 @@ https://gist.github.com/yonglai/d4617d6914d5f4eb22e4e5a15c0e9a03
 I figured I should probably try running the commands over ssh first so I know what I'm doing
 https://techviewleo.com/setup-docker-swarm-cluster-on-rocky-linux/
 
+some ansible, swarm, vagrant specific examples:
+https://codereview.stackexchange.com/questions/270183/ansible-playbook-to-install-docker-swarm
+https://github.com/acuto/swarm-vagrant-ansible
+
+
 ```bash
 sudo dnf install -y lvm2 device-mapper device-mapper-persistent-data device-mapper-event device-mapper-libs device-mapper-event-libs
 sudo dnf install -y dnf-utils
